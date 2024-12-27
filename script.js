@@ -45,9 +45,9 @@ d3.json(
       .text("More Information: http://www.bea.gov/national/pdf/nipaguid.pdf")
       .attr("class", "info");
 
-    var years = data.data.map(function (item) {
-      var quarter;
-      var temp = item[0].substring(5, 7);
+    const years = data.data.map(function (item) {
+      let quarter;
+      const temp = item[0].substring(5, 7);
 
       if (temp === "01") {
         quarter = "Q1";
@@ -68,7 +68,7 @@ d3.json(
 
     const xMax = new Date(d3.max(yearsDate));
     xMax.setMonth(xMax.getMonth() + 3);
-    var xScale = d3
+    const xScale = d3
       .scaleTime()
       .domain([d3.min(yearsDate), xMax])
       .range([0, width]);
@@ -128,7 +128,7 @@ d3.json(
         return d;
       })
       .attr("index", (d, i) => i)
-      .style("fill", "#33adff")
+      .style("fill", "#CACF85")
       .attr("transform", "translate(60, 0)")
       .on("mouseover", function (event, d) {
         // d or datum is the height of the
